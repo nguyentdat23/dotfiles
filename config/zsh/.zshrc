@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Source additional local files if they exist.
 [[ -f ~/.config/zsh/zprofile.local ]] && source ~/.config/zsh/zprofile.local
 
@@ -93,12 +100,11 @@ source $ZDOTDIR/.packages/fast-syntax-highlighting/fast-syntax-highlighting.plug
 source $ZDOTDIR/.packages/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/.packages/fzf-tab/fzf-tab.plugin.zsh
 source $ZDOTDIR/.packages/zsh-manydots-magic/manydots-magic
-
+source $ZDOTDIR/.packages/powerlevel10k/powerlevel10k.zsh-theme
 # Extra functions
 
 function take() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories take
 
-if [[ "$OPEN_PROJECT" == 1 ]]; then
-    source $HOME/dotfiles/bin/project
-fi
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
