@@ -1,12 +1,14 @@
 return {
-  {
-    "ggandor/leap.nvim",
-  },
+  -- {
+  --   "ggandor/leap.nvim",
+  -- },
   {
     "saghen/blink.cmp",
+    version = "*",
     dependencies = {
       "mikavilpas/blink-ripgrep.nvim",
     },
+    opts_extend = { "sources.default" },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
