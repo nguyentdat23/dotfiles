@@ -60,13 +60,13 @@ export LESSHISTFILE="-"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --ignore-file ~/.config/ripgrep/ignore'
 
 # FZF styles
-export FZF_DEFAULT_OPTS="
---bind='ctrl-o:execute(nvim {})+abort' 
---inline-info
---color=bg+:#16161D,spinner:#957FB8,hl:#7E9CD8
---color=fg:#DCD7BA,header:#C8C093,info:#E6C384,pointer:#957FB8
---color=marker:#E6C384,fg+:#DCD7BA,prompt:#957FB8,hl+:#957FB8
-"
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
+  --color=fg:-1,fg+:#51576d,bg:-1,bg+:#b5bfe2
+  --color=hl:#1267bd,hl+:#5fd7ff,info:#c9c911,marker:#87ff00
+  --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#18cfcf
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
+  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
 
 # Java
 if [[ -d "/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home" ]]; then

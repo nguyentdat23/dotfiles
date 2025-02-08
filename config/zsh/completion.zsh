@@ -11,10 +11,13 @@ _comp_options+=(globdots)  # With hidden files
 # tabtab source for packages
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
+zstyle ':fzf-tab:*' fzf-flags '--color=fg:-1,bg:-1,fg+:9,bg+:0,pointer:#d28bfe,hl:9'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select  # Nice styling for completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'  # Case insensitive completion
 zstyle ':completion:*' expand prefix suffix  # Do not require typing beginning of filename for completion
-
 zstyle ':completion:*:*:*:*:descriptions' format '-- %d --'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
