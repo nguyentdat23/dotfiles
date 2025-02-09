@@ -61,12 +61,12 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --ignore-file ~/
 
 # FZF styles
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
-  --color=fg:-1,fg+:#51576d,bg:-1,bg+:#b5bfe2
-  --color=hl:#1267bd,hl+:#5fd7ff,info:#c9c911,marker:#87ff00
+  --color=fg:-1,bg:-1,fg+:9,bg+:#BAC3CB
+  --color=hl:7,hl+:8,info:5,marker:2
   --color=prompt:#d7005f,spinner:#af5fff,pointer:#af5fff,header:#18cfcf
   --color=border:#262626,label:#aeaeae,query:#d9d9d9
-  --border="rounded" --border-label="" --preview-window="border-rounded" --prompt="> "
-  --marker=">" --pointer="◆" --separator="─" --scrollbar="│"'
+  --border="none" --border-label="" --preview-window="border-rounded" --prompt=" "
+  --marker="" --pointer="◆" --separator="_" --scrollbar="│"'
 
 # Java
 if [[ -d "/Applications/Android Studio.app/Contents/jre/jdk/Contents/Home" ]]; then

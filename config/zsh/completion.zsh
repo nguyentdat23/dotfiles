@@ -11,7 +11,7 @@ _comp_options+=(globdots)  # With hidden files
 # tabtab source for packages
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-zstyle ':fzf-tab:*' fzf-flags '--color=fg:-1,bg:-1,fg+:9,bg+:0,pointer:#d28bfe,hl:9'
+zstyle ':fzf-tab:*' fzf-flags '--color=fg:-1,bg:-1,fg+:9,bg+:0,pointer:#d28bfe,hl+:5,hl:9'
 # zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 
 # zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
