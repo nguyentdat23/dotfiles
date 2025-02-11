@@ -79,10 +79,13 @@ local jdtls_config = {
 vim.list_extend(jdtls_config.bundles, require("spring_boot").java_extensions())
 
 require("spring_boot").init_lsp_commands()
-require("lspconfig").jdtls.setup({
+
+local lspconfig = require("lspconfig")
+lspconfig.jdtls.setup({
   init_options = {
     bundles = require("spring_boot").java_extensions(),
   },
+  root_dir = lspconfig.util.root_pattern(".git", "mvnw", "gradlew", "pom.xml", "build.gradle") | vim.fn.getcwd(),
 })
 
 -- keymap

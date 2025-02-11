@@ -13,6 +13,7 @@ return {
         "vim",
         "yaml",
         "java",
+        "xml",
       },
     },
   },
