@@ -15,4 +15,52 @@ return {
       },
     },
   },
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "nvim-neotest/nvim-nio" },
+    opts = {
+      layouts = {
+        {
+          elements = {
+            {
+              id = "watches",
+              size = 0.25,
+            },
+            {
+              id = "breakpoints",
+              size = 0.25,
+            },
+            {
+              id = "scopes",
+              size = 0.25,
+            },
+          },
+          position = "left",
+          size = 30,
+        },
+        {
+          elements = {
+            {
+              id = "repl",
+              size = 0.25,
+            },
+            {
+              id = "console",
+              size = 0.75,
+            },
+          },
+          position = "bottom",
+          size = 10,
+        },
+      },
+      mappings = {
+        edit = "e",
+        expand = { "<CR>", "<2-LeftMouse>" },
+        open = "o",
+        remove = "d",
+        repl = "r",
+        toggle = "t",
+      },
+    },
+  },
 }
