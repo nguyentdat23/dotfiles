@@ -1,7 +1,4 @@
 return {
-  -- {
-  --   "ggandor/leap.nvim",
-  -- },
   {
     "saghen/blink.cmp",
     version = "*",
@@ -17,6 +14,9 @@ return {
           "ripgrep",
         },
         providers = {
+          lsp = {
+            score_offset = 10,
+          },
           ripgrep = {
             module = "blink-ripgrep",
             name = "Ripgrep",
@@ -24,40 +24,10 @@ return {
             ---@module "blink-ripgrep"
             ---@type blink-ripgrep.Options
             opts = {
-              -- For many options, see `rg --help` for an exact description of
-              -- the values that ripgrep expects.
-
-              -- the minimum length of the current word to start searching
-              -- (if the word is shorter than this, the search will not start)
-              prefix_min_len = 3,
-
-              -- The number of lines to show around each match in the preview
-              -- (documentation) window. For example, 5 means to show 5 lines
-              -- before, then the match, and another 5 lines after the match.
+              prefix_min_len = 2,
               context_size = 5,
-
-              -- The maximum file size of a file that ripgrep should include in
-              -- its search. Useful when your project contains large files that
-              -- might cause performance issues.
-              -- Examples:
-              -- "1024" (bytes by default), "200K", "1M", "1G", which will
-              -- exclude files larger than that size.
-              max_filesize = "1M",
-
-              -- Specifies how to find the root of the project where the ripgrep
-              -- search will start from. Accepts the same options as the marker
-              -- given to `:h vim.fs.root()` which offers many possibilities for
-              -- configuration. If none can be found, defaults to Neovim's cwd.
-              --
-              -- Examples:
-              -- - ".git" (default)
-              -- - { ".git", "package.json", ".root" }
-              project_root_marker = ".git",
-
-              -- The casing to use for the search in a format that ripgrep
-              -- accepts. Defaults to "--ignore-case". See `rg --help` for all the
-              -- available options ripgrep supports, but you can try
-              -- "--case-sensitive" or "--smart-case".
+              max_filesize = "512K",
+              project_root_marker = { ".git", "package.json", ".root" },
               search_casing = "--ignore-case",
 
               -- (advanced) Any additional options you want to give to ripgrep.
@@ -98,6 +68,8 @@ return {
               end
               return items
             end,
+
+            score_offset = -10, -- Boost/penalize the score of the items
           },
         },
       },
@@ -112,37 +84,6 @@ return {
           max_items = 50,
           selection = {
             auto_insert = false,
-          },
-        },
-        menu = {
-          draw = {
-            components = {
-              label_description = {
-                width = { max = 30 },
-                text = function(ctx)
-                  local cmp_item = ctx.item
-
-                  if cmp_item.data and cmp_item.data.entryNames and cmp_item.data.entryNames[1] then
-                    local entryNames = cmp_item.data.entryNames[1]
-
-                    if entryNames and entryNames.source then
-                      return entryNames.source
-                    end
-                  end
-
-                  return ctx.label_description
-                end,
-                highlight = "BlinkCmpLabelDescription",
-              },
-
-              source_name = {
-                width = { max = 30 },
-                text = function(ctx)
-                  return ctx.source_name
-                end,
-                highlight = "BlinkCmpSource",
-              },
-            },
           },
         },
       },
