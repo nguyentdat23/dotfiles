@@ -19,13 +19,6 @@ return {
           files = {
             layout = {
               preview = false,
-              layout = {
-                box = "vertical",
-                backdrop = false,
-                width = 0.5,
-                height = 0.5,
-                border = "none",
-              },
             },
           },
           grep = {

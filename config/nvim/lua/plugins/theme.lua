@@ -13,6 +13,10 @@ return {
     end,
   },
   {
+    "rose-pine/neovim",
+    name = "rose-pine",
+  },
+  {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
@@ -21,5 +25,12 @@ return {
         term_colors = true,
       })
     end,
+  },
+  {
+    "jackplus-xyz/monaspace.nvim",
+    lazy = false,
+    opts = {
+      -- Add your configuration here
+    },
   },
 }

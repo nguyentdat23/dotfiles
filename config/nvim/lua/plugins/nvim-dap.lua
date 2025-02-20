@@ -23,11 +23,15 @@ return {
         {
           elements = {
             {
+              id = "breakpoints",
+              size = 0.25,
+            },
+            {
               id = "watches",
               size = 0.25,
             },
             {
-              id = "breakpoints",
+              id = "repl",
               size = 0.25,
             },
             {
@@ -41,16 +45,12 @@ return {
         {
           elements = {
             {
-              id = "repl",
-              size = 0.25,
-            },
-            {
               id = "console",
-              size = 0.75,
+              size = 1,
             },
           },
           position = "bottom",
-          size = 10,
+          size = 15,
         },
       },
       mappings = {
