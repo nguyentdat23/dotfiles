@@ -30,7 +30,29 @@ return {
     "jackplus-xyz/monaspace.nvim",
     lazy = false,
     opts = {
-      -- Add your configuration here
+      -- use_default = false,
+      style_map = {
+        italic = {
+          Comment = true,
+          Todo = true,
+          SpecialComment = true,
+          ["@comment"] = true,
+          ["@comment.documentation"] = true,
+          ["@comment.error"] = true,
+          ["@comment.warning"] = true,
+          ["@comment.todo"] = true,
+          ["@comment.hint"] = true,
+          ["@comment.info"] = true,
+          ["@comment.note"] = true,
+          ["@lsp.type.comment"] = true,
+          ["@lsp.type.comment.c"] = true,
+          ["@lsp.type.comment.cpp"] = true,
+          ["@string.documentation"] = true,
+          LspCodeLens = true,
+          LspInlayHint = true,
+          StatusLineTermNC = false,
+        },
+      },
     },
   },
 }
