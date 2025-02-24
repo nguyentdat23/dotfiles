@@ -10,9 +10,7 @@ return {
     ---@type blink.cmp.Config
     opts = {
       sources = {
-        default = {
-          "ripgrep",
-        },
+        default = { "lsp", "path", "snippets", "buffer" },
         providers = {
           lsp = {
             score_offset = 10,
@@ -56,19 +54,6 @@ return {
               -- diagnosing issues with the plugin.
               debug = false,
             },
-            -- (optional) customize how the results are displayed. Many options
-            -- are available - make sure your lua LSP is set up so you get
-            -- autocompletion help
-            transform_items = function(_, items)
-              for _, item in ipairs(items) do
-                -- example: append a description to easily distinguish rg results
-                item.labelDetails = {
-                  description = "(rg)",
-                }
-              end
-              return items
-            end,
-
             score_offset = -10, -- Boost/penalize the score of the items
           },
         },
@@ -81,7 +66,6 @@ return {
           enabled = false,
         },
         list = {
-          max_items = 50,
           selection = {
             auto_insert = false,
           },

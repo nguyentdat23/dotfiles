@@ -30,7 +30,7 @@ return {
     "jackplus-xyz/monaspace.nvim",
     lazy = false,
     opts = {
-      -- use_default = false,
+      use_default = false,
       style_map = {
         italic = {
           Comment = true,
@@ -50,6 +50,11 @@ return {
           ["@string.documentation"] = true,
           LspCodeLens = true,
           LspInlayHint = true,
+        },
+        bold_italic = {
+          StatusLine = false,
+          StatusLineNC = false,
+          StatusLineTerm = false,
           StatusLineTermNC = false,
         },
       },
