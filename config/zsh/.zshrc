@@ -16,7 +16,6 @@ export NVM_DIR="$HOME/.nvm"
 
 typeset -U path
 path=(
-  $NVM_DIR
   /usr/local/{bin,sbin}
   $HOME/dotfiles/bin
   /opt/homebrew/bin
@@ -26,13 +25,9 @@ path=(
   $ANDROID_SDK_ROOT/platform-tools
   $XDG_DATA_HOME/nvim/mason/bin
   $PNPM_HOME
+  $NVM_DIR
   $path
 )
-
-# Options
-
-# Emacs mode in ZLE
-bindkey -e
 
 # Zsh history
 export HISTFILE="$ZDOTDIR/.zsh_history"
@@ -117,7 +112,3 @@ compdef _directories take
 
 # environent variables
 export spring_profiles_active=local,dev
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-

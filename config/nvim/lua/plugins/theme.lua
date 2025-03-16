@@ -20,44 +20,55 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     priority = 1000,
-    config = function()
-      require("catppuccin").setup({
-        term_colors = true,
-      })
+    opts = function()
+      ---@type CatppuccinOptions
+      return {
+        background = {
+          dark = "frappe",
+          light = "latte",
+        },
+        color_overrides = {
+          highlight_overrides = {
+            all = function(colors)
+              return {
+                IblIndent = { fg = colors.surface0 },
+                IblScope = { fg = colors.overlay0 },
+              }
+            end,
+          },
+          latte = {
+            rosewater = "#dc8a78",
+            flamingo = "#dd7878",
+            pink = "#ea76cb",
+            mauve = "#9a61f9",
+            red = "#d20f39",
+            maroon = "#e64553",
+            peach = "#fe640b",
+            yellow = "#e79832",
+            green = "#39ab60",
+            teal = "#24aad9",
+            sky = "#5ca1f3",
+            sapphire = "#1aab8f",
+            blue = "#2d6be5",
+            lavender = "#5767ef",
+          },
+        },
+      }
     end,
   },
   {
-    "jackplus-xyz/monaspace.nvim",
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
+  {
+    "AlexvZyl/nordic.nvim",
     lazy = false,
-    opts = {
-      use_default = false,
-      style_map = {
-        italic = {
-          Comment = true,
-          Todo = true,
-          SpecialComment = true,
-          ["@comment"] = true,
-          ["@comment.documentation"] = true,
-          ["@comment.error"] = true,
-          ["@comment.warning"] = true,
-          ["@comment.todo"] = true,
-          ["@comment.hint"] = true,
-          ["@comment.info"] = true,
-          ["@comment.note"] = true,
-          ["@lsp.type.comment"] = true,
-          ["@lsp.type.comment.c"] = true,
-          ["@lsp.type.comment.cpp"] = true,
-          ["@string.documentation"] = true,
-          LspCodeLens = true,
-          LspInlayHint = true,
-        },
-        bold_italic = {
-          StatusLine = false,
-          StatusLineNC = false,
-          StatusLineTerm = false,
-          StatusLineTermNC = false,
-        },
-      },
-    },
+    priority = 1000,
+    config = function() end,
+  },
+  {
+    "ayu-theme/ayu-vim",
+    name = "ayu-vim",
+    priority = 1000,
   },
 }

@@ -9,16 +9,11 @@
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
 font_size 15
-font_family      family='Monaspace Neon Var' style=Regular variable_name=MonaspaceNeonVar
-bold_font        auto
-italic_font      autoLight
-bold_italic_font auto
-modify_font cell_height 8px
 
-# font_family      family="MonaspiceNe Nerd Font Mono" style="Light"
-# italic_font      family='MonaspiceAr Nerd Font Mono' style='Light Italic'
-# bold_font        family="MonaspiceNe Nerd Font Mono"
-# bold_italic_font family='MonaspiceAr Nerd Font Mono' style='Medium Italic'
+font_family      family="MonaspiceNe Nerd Font Mono" style="Light"
+italic_font      family='MonaspiceAr Nerd Font Mono' style='Light Italic'
+bold_font        family="MonaspiceNe Nerd Font Mono"
+bold_italic_font family='MonaspiceAr Nerd Font Mono' style='Medium Italic'
 
 #: }}}
 #: Cursor customization {{{
@@ -229,5 +224,3 @@ map kitty_mod+f next_layout
 #: Include host specific conf {{{
 
 # }}}
-
-
