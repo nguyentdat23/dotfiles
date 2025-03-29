@@ -1,8 +1,10 @@
 local home = os.getenv("HOME")
 
-local workspace_path = home .. "/local/share/nvim/jdtls-workspace/"
+local workspace_path = "~/Developer/Java/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = workspace_path .. project_name
+
+vim.print(home)
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then
@@ -26,7 +28,6 @@ local config = {
     "java.base/java.lang=ALL-UNNAMED",
     "-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
     "-jar",
-    "-Dspring.profiles.active=local", -- attempt to set active profile for Spring Boot project
     vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
     "-configuration",
     home .. "/.local/share/nvim/mason/packages/jdtls/config_mac",
@@ -42,9 +43,8 @@ local config = {
     },
     java = {
       format = {
-        enabled = true,
         settings = {
-          url = home .. "/Developer/config/intellij-java-google-style.xml",
+          url = home .. "/Developer/config/java-google-style.xml",
           profile = "GoogleStyle",
         },
       },
@@ -55,11 +55,6 @@ local config = {
       },
       references = {
         includeDecompiledSources = true,
-      },
-      inlayHints = {
-        parameterNames = {
-          enabled = "all", -- literals, all, none
-        },
       },
     },
   },

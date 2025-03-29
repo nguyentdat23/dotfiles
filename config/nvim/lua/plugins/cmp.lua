@@ -18,43 +18,20 @@ return {
           ripgrep = {
             module = "blink-ripgrep",
             name = "Ripgrep",
-            -- the options below are optional, some default values are shown
             ---@module "blink-ripgrep"
             ---@type blink-ripgrep.Options
             opts = {
-              prefix_min_len = 2,
-              context_size = 5,
+              prefix_min_len = 3,
+              context_size = 50,
               max_filesize = "512K",
-              project_root_marker = { ".git", "package.json", ".root" },
+              project_root_marker = { ".git", "package.json", ".root", "pom.xml" },
               search_casing = "--ignore-case",
-
-              -- (advanced) Any additional options you want to give to ripgrep.
-              -- See `rg -h` for a list of all available options. Might be
-              -- helpful in adjusting performance in specific situations.
-              -- If you have an idea for a default, please open an issue!
-              --
-              -- Not everything will work (obviously).
               additional_rg_options = {},
-
-              -- When a result is found for a file whose filetype does not have a
-              -- treesitter parser installed, fall back to regex based highlighting
-              -- that is bundled in Neovim.
               fallback_to_regex_highlighting = true,
-
-              -- Absolute root paths where the rg command will not be executed.
-              -- Usually you want to exclude paths using gitignore files or
-              -- ripgrep specific ignore files, but this can be used to only
-              -- ignore the paths in blink-ripgrep.nvim, maintaining the ability
-              -- to use ripgrep for those paths on the command line. If you need
-              -- to find out where the searches are executed, enable `debug` and
-              -- look at `:messages`.
               ignore_paths = {},
 
-              -- Show debug information in `:messages` that can help in
-              -- diagnosing issues with the plugin.
               debug = false,
             },
-            score_offset = -10, -- Boost/penalize the score of the items
           },
         },
       },
