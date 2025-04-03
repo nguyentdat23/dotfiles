@@ -8,12 +8,17 @@
 #: the OSes font system. Setting them manually is useful for font
 #: families that have many weight variants like Book, Medium, Thick,
 #: etc. For example::
-font_size 15
+font_size 17
+# font_family      family='Monaspace Neon Var' variable_name=MonaspaceNeonVar wght=360
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+modify_font cell_height 4px
 
-font_family      family="MonaspiceNe Nerd Font Mono" style="Light"
-italic_font      family='MonaspiceAr Nerd Font Mono' style='Light Italic'
-bold_font        family="MonaspiceNe Nerd Font Mono"
-bold_italic_font family='MonaspiceAr Nerd Font Mono' style='Medium Italic'
+# font_family      family="MonaspiceNe Nerd Font Mono" style="Light"
+# italic_font      family='MonaspiceAr Nerd Font Mono' style='Light Italic'
+# bold_font        family="MonaspiceNe Nerd Font Mono"
+# bold_italic_font family='MonaspiceAr Nerd Font Mono' style='Medium Italic'
 
 #: }}}
 #: Cursor customization {{{
@@ -81,6 +86,7 @@ window_margin_width 3
 #: Color scheme {{{
 
 # Import the color theme
+include no-preference-theme-auto.conf
 include light-theme.auto.conf
 include dark-theme.auto.conf
 
@@ -123,6 +129,7 @@ macos_titlebar_color background
 #: Kitty modifier key
 macos_option_as_alt yes
 kitty_mod cmd
+map kitty_mod+k clear
 
 #: Mappings for vim-kitty-navigator
 map ctrl+j kitten pass_keys.py neighboring_window bottom ctrl+j
@@ -224,3 +231,5 @@ map kitty_mod+f next_layout
 #: Include host specific conf {{{
 
 # }}}
+
+

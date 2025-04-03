@@ -9,7 +9,6 @@ return {
       dap.configurations.java = {}
     end,
     dependencies = {
-      { "igorlfs/nvim-dap-view", opts = {} },
       {
         "williamboman/mason.nvim",
         opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
@@ -19,7 +18,6 @@ return {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "nvim-neotest/nvim-nio" },
-    enabled = false,
     opts = {
       layouts = {
         {
@@ -42,7 +40,7 @@ return {
             },
           },
           position = "left",
-          size = 20,
+          size = 30,
         },
         {
           elements = {
