@@ -12,6 +12,19 @@ return {
     ---@module "neo-tree"
     ---@type neotree.Config?
     opts = {
+      default_component_configs = {
+        container = {
+          enable_character_fade = true,
+        },
+        icon = {
+          folder_closed = "",
+          folder_open = "󰝰",
+          folder_empty = "󰜌",
+        },
+        name = {
+          use_git_status_colors = false,
+        },
+      },
       -- fill any relevant options here
       filesystem = {
         group_empty_dirs = true,

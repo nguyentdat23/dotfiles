@@ -1,10 +1,7 @@
 local home = os.getenv("HOME")
 
-local workspace_path = "~/Developer/Java/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = workspace_path .. project_name
-
-vim.print(home)
+local workspace_dir = vim.fn.stdpath("data") .. "/jdtls-workspaces/" .. project_name
 
 local status, jdtls = pcall(require, "jdtls")
 if not status then

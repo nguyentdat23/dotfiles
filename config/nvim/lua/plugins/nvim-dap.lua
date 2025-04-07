@@ -24,22 +24,22 @@ return {
           elements = {
             {
               id = "breakpoints",
-              size = 0.25,
-            },
-            {
-              id = "watches",
-              size = 0.25,
-            },
-            {
-              id = "repl",
-              size = 0.25,
+              size = 0.2,
             },
             {
               id = "scopes",
-              size = 0.25,
+              size = 0.4,
+            },
+            {
+              id = "watches",
+              size = 0.2,
+            },
+            {
+              id = "repl",
+              size = 0.2,
             },
           },
-          position = "left",
+          position = "right",
           size = 30,
         },
         {
