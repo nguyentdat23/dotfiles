@@ -8,6 +8,14 @@ return {
       { "williamboman/mason-lspconfig.nvim", config = function() end },
     },
     opts = {
+      servers = {
+        jdtls = {},
+      },
+      setup = {
+        jdtls = function()
+          return true
+        end,
+      },
       diagnostics = {
         underline = true,
         virtual_text = {
