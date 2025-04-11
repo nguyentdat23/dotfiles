@@ -1,7 +1,6 @@
 return {
   { "LazyVim/LazyVim", import = "lazyvim.plugins" },
   {
-
     "neovim/nvim-lspconfig",
     event = "LazyFile",
     dependencies = {

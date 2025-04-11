@@ -3,14 +3,11 @@ alias sudo='sudo -E'  # Use current user configs
 alias grep='grep  --color=auto --exclude-dir={.git}'
 alias c='clear'
 alias tree='tree -a -I .git'
+alias ssh='kitty +kitten ssh'
 
 # Programs
 alias vim='nvim'
 alias v='nvim'
-alias r='ranger'
-if type /Applications/love.app/Contents/MacOS/love > /dev/null; then
-  alias love='/Applications/love.app/Contents/MacOS/love'
-fi
 
 alias up='docker compose up'
 alias down='docker compose down'
@@ -74,6 +71,3 @@ alias rm-node-modules='rm -rf $(find . -type d -name "node_modules" | grep --inv
 
 # Delete all node_modules folders in the current directory, recursively
 alias clean-node-modules="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
-
-# Cleaning up ~
-alias svn="svn --config-dir $XDG_CONFIG_HOME/subversion"

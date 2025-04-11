@@ -40,7 +40,7 @@ return {
             },
           },
           position = "right",
-          size = 30,
+          size = 40,
         },
         {
           elements = {
