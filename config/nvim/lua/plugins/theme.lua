@@ -7,6 +7,7 @@ return {
     opts = function()
       ---@type CatppuccinOptions
       return {
+        integrations = { blink_cmp = true },
         highlight_overrides = {
           all = function(colors)
             return {
@@ -75,13 +76,13 @@ return {
             subtext1 = "#7f7674",
             subtext0 = "#99908e",
             overlay2 = "#ada7a5",
-            overlay1 = "#c0bbb9",
+            overlay1 = "#a9a3a1",
             overlay0 = "#b0aaa8",
-            surface2 = "#e4d7d1",
-            surface1 = "#eae1dc",
-            surface0 = "#ebe0db",
+            surface2 = "#f1ebe8",
+            surface1 = "#fae7dc",
+            surface0 = "#fefaf8",
             base = "#fefcfa",
-            mantle = "#f5f3f2",
+            mantle = "#fcf8f7",
             crust = "#e5e2df",
           },
           frappe = {
