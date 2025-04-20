@@ -88,13 +88,9 @@ return {
         test = true,
         settings = {
           java = {
-            configuration = {
-              updateBuildConfiguration = "automatic",
-            },
-            codeGeneration = {
-              useBlocks = true,
-            },
             completion = {
+              matchCase = "firstletter",
+              maxResults = 50,
               importOrder = {
                 "#",
                 "java",
@@ -104,15 +100,9 @@ return {
               },
             },
             contentProvider = { preferred = "fernflower" },
-            eclipse = {
-              downloadSources = true,
-            },
             flags = {
-              allow_incremental_sync = true,
+              allow_incremental_sync = false,
               server_side_fuzzy_completion = true,
-            },
-            implementationsCodeLens = {
-              enabled = false, --Don"t automatically show implementations
             },
             maven = {
               downloadSources = true,
@@ -120,15 +110,8 @@ return {
             references = {
               includeDecompiledSources = true,
             },
-            saveActions = {
-              organizeImports = true,
-            },
-            signatureHelp = { enabled = true },
-            sources = {
-              organizeImports = {
-                starThreshold = 9999,
-                staticStarThreshold = 9999,
-              },
+            edit = {
+              validateAllOpenBuffersOnChanges = false,
             },
           },
         },
@@ -170,7 +153,6 @@ return {
           progressReportProvider = false,
         })
 
-        -- Configuration can be augmented and overridden by opts.jdtls
         local config = extend_or_override({
           cmd = opts.full_cmd(opts),
           root_dir = opts.root_dir(fname),
@@ -179,15 +161,14 @@ return {
             extendedClientCapabilities = extendedClientCapabilities,
           },
           settings = opts.settings,
+          capabilities = require("blink.cmp").get_lsp_capabilities(),
         }, opts.jdtls)
 
-        -- Existing server will be reused if the root_dir matches.
         require("jdtls").start_or_attach(config)
         require("spring_boot").setup({
           ls_path = require("mason-registry").get_package("vscode-spring-boot-tools"):get_install_path()
             .. "/extension/language-server",
         })
-        -- not need to require("jdtls.setup").add_commands(), start automatically adds commands
       end
 
       vim.api.nvim_create_autocmd("FileType", {
