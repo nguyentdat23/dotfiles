@@ -16,20 +16,17 @@ return {
           priority = 1,
           enabled = true, -- enable indent guides
           char = "│",
-          only_scope = true, -- only show indent guides of the scope
-          only_current = true, -- only show indent guides in the current window
-          hl = { "SnacksIndent3", "SnacksIndent5", "SnacksIndent6" }, ---@type string|string[] hl groups for indent guides
+          only_scope = true,
+          only_current = true,
+          hl = { "SnacksIndent3", "SnacksIndent5", "SnacksIndent6" },
         },
-        ---@class snacks.indent.animate: snacks.animate.Config
-        ---@field enabled? boolean
-        ---@field style? "out"|"up_down"|"down"|"up"
         animate = {
           enabled = vim.fn.has("nvim-0.10") == 1,
           style = "up_down",
           easing = "linear",
           duration = {
             step = 20, -- ms per step
-            total = 500, -- maximum duration
+            total = 200, -- maximum duration
           },
         },
         ---@class snacks.indent.Scope.Config: snacks.scope.Config
@@ -64,44 +61,6 @@ return {
       input = { enabled = true },
       picker = {
         enabled = true,
-        sources = {
-          files = {
-            layout = {
-              preview = false,
-            },
-          },
-          grep = {
-            hidden = true,
-            layout = {
-              reverse = true,
-              layout = {
-                box = "vertical",
-                backdrop = false,
-                width = 0.8,
-                height = 0.9,
-                border = "none",
-                {
-                  box = "vertical",
-                  { win = "list", height = 0.3, title = " Results ", title_pos = "center", border = "rounded" },
-                  {
-                    win = "input",
-                    height = 1,
-                    border = "rounded",
-                    title = "{title} {live} {flags}",
-                    title_pos = "center",
-                  },
-                  {
-                    win = "preview",
-                    title = "{preview:Preview}",
-                    height = 0.7,
-                    border = "rounded",
-                    title_pos = "center",
-                  },
-                },
-              },
-            },
-          },
-        },
       },
       quickfile = { enabled = true },
       scope = { enabled = true },

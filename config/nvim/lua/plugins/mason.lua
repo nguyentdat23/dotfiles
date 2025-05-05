@@ -8,7 +8,6 @@ return {
       },
       ensure_installed = {
         "jdtls",
-        "vtsls",
         "java-test",
         "java-debug-adapter",
       },
