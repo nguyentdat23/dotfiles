@@ -10,7 +10,11 @@ return {
     end,
     dependencies = {
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
+        registries = {
+          "github:indika-dev/personal-mason-registry",
+          "github:mason-org/mason-registry",
+        },
         opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
       },
     },

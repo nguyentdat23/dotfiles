@@ -35,7 +35,7 @@ return {
     optional = true,
     dependencies = {
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
       },
     },
@@ -50,8 +50,7 @@ return {
       table.insert(cmd, "--jvm-arg=-Xms2G")
 
       if LazyVim.has("mason.nvim") then
-        local mason_registry = require("mason-registry")
-        local lombok_jar = mason_registry.get_package("jdtls"):get_install_path() .. "/lombok.jar"
+        local lombok_jar = LazyVim.get_pkg_path("jdtls", "/lombok.jar")
         table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
       end
 
@@ -123,17 +122,16 @@ return {
 
       if LazyVim.has("mason.nvim") then
         local mason_registry = require("mason-registry")
-
         if opts.dap and LazyVim.has("nvim-dap") and mason_registry.is_installed("java-debug-adapter") then
-          local java_dbg_pkg = mason_registry.get_package("java-debug-adapter")
-          local java_dbg_path = java_dbg_pkg:get_install_path()
+          local java_dbg_path = LazyVim.get_pkg_path("java-debug-adapter")
+
           local jar_patterns = {
             java_dbg_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar",
           }
           -- java-test also depends on java-debug-adapter.
           if opts.test and mason_registry.is_installed("java-test") then
-            local java_test_pkg = mason_registry.get_package("java-test")
-            local java_test_path = java_test_pkg:get_install_path()
+            local java_test_path = LazyVim.get_pkg_path("java-test")
+
             vim.list_extend(jar_patterns, {
               java_test_path .. "/extension/server/*.jar",
             })
@@ -166,8 +164,7 @@ return {
 
         require("jdtls").start_or_attach(config)
         require("spring_boot").setup({
-          ls_path = require("mason-registry").get_package("vscode-spring-boot-tools"):get_install_path()
-            .. "/extension/language-server",
+          ls_path = LazyVim.get_pkg_path("vscode-spring-boot-tools") .. "/extension/language-server",
         })
       end
 
@@ -218,8 +215,8 @@ return {
 
             if LazyVim.has("mason.nvim") then
               local mason_registry = require("mason-registry")
+
               if opts.dap and LazyVim.has("nvim-dap") and mason_registry.is_installed("java-debug-adapter") then
-                -- custom init for Java debugger
                 require("jdtls").setup_dap(opts.dap)
                 if opts.dap_main then
                   require("jdtls.dap").setup_dap_main_class_configs(opts.dap_main)
