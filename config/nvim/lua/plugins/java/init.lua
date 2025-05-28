@@ -163,8 +163,20 @@ return {
         }, opts.jdtls)
 
         require("jdtls").start_or_attach(config)
+
+        local function first(glob_pattern)
+          -- {list=1} ⇒ returns newline-separated list, we take the first entry
+          return vim.split(vim.fn.glob(glob_pattern), "\n")[1] or ""
+        end
+
+        -- the Mason package root:
+        local boot_pkg_root = LazyVim.get_pkg_path("vscode-spring-boot-tools")
+
+        -- glob for *any* version of the exec-jar (works with Mason v2 layout)
+        local boot_ls_path = first(boot_pkg_root .. "extension/language-server/spring-boot-language-server-*-exec.jar")
+
         require("spring_boot").setup({
-          ls_path = LazyVim.get_pkg_path("vscode-spring-boot-tools") .. "/extension/language-server",
+          ls_path = boot_ls_path,
         })
       end
 

@@ -25,6 +25,7 @@ return {
           use_git_status_colors = false,
         },
       },
+      popup_border_style = "NC", -- or "" to use 'winborder' on Neovim v0.11+
       -- fill any relevant options here
       filesystem = {
         group_empty_dirs = true,

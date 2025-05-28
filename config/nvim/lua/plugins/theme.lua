@@ -25,7 +25,6 @@ return {
                 fg = colors.text,
               },
               String = {
-                fg = colors.rosewater,
                 style = {
                   "italic",
                 },
@@ -41,9 +40,6 @@ return {
               },
               Type = {
                 fg = colors.mauve,
-                style = {
-                  "bold",
-                },
               },
               NeoTreeCursorLine = {
                 fg = colors.blue,
@@ -63,20 +59,20 @@ return {
         color_overrides = {
           latte = {
             rosewater = "#a25342",
-            flamingo = "#b95c5c",
-            pink = "#635da3",
-            mauve = "#578959",
-            red = "#cb4d53",
-            maroon = "#538cb1",
-            peach = "#dd6069",
-            yellow = "#d39642",
-            green = "#3d9767",
-            teal = "#b4643c",
+            flamingo = "#af5552",
+            pink = "#ba5e7c",
+            mauve = "#5c8752",
+            red = "#c1575a",
+            maroon = "#52849c",
+            peach = "#408a7b",
+            yellow = "#c88747",
+            green = "#518446",
+            teal = "#3a8b88",
             sky = "#4a7c9a",
             sapphire = "#49828e",
-            blue = "#da883b",
+            blue = "#ba684c",
             lavender = "#4b7997",
-            text = "#62554a",
+            text = "#5b4f44",
             subtext1 = "#705c4f",
             subtext0 = "#7f6d5f",
             overlay2 = "#a49085",
@@ -84,9 +80,9 @@ return {
             overlay0 = "#a49085",
             surface2 = "#c6b9b0",
             surface1 = "#d1c6be",
-            surface0 = "#e0d7d1",
-            base = "#f9f7f6",
-            mantle = "#f5f1ef",
+            surface0 = "#ddd8d4",
+            base = "#f7f3ef",
+            mantle = "#f5f0eb",
             crust = "#e5d3c9",
           },
           frappe = {
