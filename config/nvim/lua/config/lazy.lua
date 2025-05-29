@@ -45,34 +45,3 @@ require("lazy").setup({
   { import = "lazyvim.plugins.extras.formatting.prettier" },
   { import = "lazyvim.plugins.extras.dap.core" },
 })
-
-vim.lsp.config("ts_go_ls", {
-  cmd = { vim.loop.os_homedir() .. "/Developers/Typecript/typescript-go/built/local/tsgo", "lsp", "-stdio" },
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-  },
-  root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
-})
-
-vim.lsp.enable("ts_go_ls")
-vim.lsp.enable("vtsls", false)
-
--- nvim-dap-view
-local dap, dv = require("dap"), require("dap-view")
-dap.listeners.before.attach["dap-view-config"] = function()
-  dv.open()
-end
-dap.listeners.before.launch["dap-view-config"] = function()
-  dv.open()
-end
-dap.listeners.before.event_terminated["dap-view-config"] = function()
-  dv.close()
-end
-dap.listeners.before.event_exited["dap-view-config"] = function()
-  dv.close()
-end
