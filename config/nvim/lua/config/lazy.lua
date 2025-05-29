@@ -61,3 +61,18 @@ vim.lsp.config("ts_go_ls", {
 
 vim.lsp.enable("ts_go_ls")
 vim.lsp.enable("vtsls", false)
+
+-- nvim-dap-view
+local dap, dv = require("dap"), require("dap-view")
+dap.listeners.before.attach["dap-view-config"] = function()
+  dv.open()
+end
+dap.listeners.before.launch["dap-view-config"] = function()
+  dv.open()
+end
+dap.listeners.before.event_terminated["dap-view-config"] = function()
+  dv.close()
+end
+dap.listeners.before.event_exited["dap-view-config"] = function()
+  dv.close()
+end

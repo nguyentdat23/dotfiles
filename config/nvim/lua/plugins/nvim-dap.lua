@@ -15,7 +15,16 @@ return {
         },
         opts = { ensure_installed = { "java-debug-adapter", "java-test" } },
       },
-      { "igorlfs/nvim-dap-view", opts = {} },
+      {
+        "igorlfs/nvim-dap-view",
+        opts = {
+          winbar = {
+            controls = {
+              enabled = true,
+            },
+          },
+        },
+      },
     },
   },
   {

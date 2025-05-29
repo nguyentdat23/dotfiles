@@ -61,10 +61,10 @@ return {
         end,
 
         jdtls_config_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
+          return vim.fn.stdpath("cache") .. "/jdtls/config/" .. project_name
         end,
         jdtls_workspace_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
+          return vim.fn.stdpath("cache") .. "/jdtls/workspace/" .. project_name
         end,
         cmd = cmd,
         full_cmd = function(opts)
