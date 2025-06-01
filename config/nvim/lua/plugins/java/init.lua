@@ -232,16 +232,6 @@ return {
                 require("jdtls").setup_dap(opts.dap)
                 if opts.dap_main then
                   require("jdtls.dap").setup_dap_main_class_configs(opts.dap_main)
-
-                  vim.api.nvim_create_autocmd("FileType", {
-                    pattern = "dap-repl",
-                    callback = function()
-                      local clients = vim.lsp.get_active_clients({ name = "jdtls" })
-                      for _, client in ipairs(clients) do
-                        vim.lsp.buf_attach_client(0, client.id)
-                      end
-                    end,
-                  })
                 end
               end
             end

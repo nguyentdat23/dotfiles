@@ -19,7 +19,10 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer" },
         per_filetype = {
-          ["dap-repl"] = { "dap", score_offset = 200 },
+          ["dap-repl"] = {
+            "dap",
+            score_offset = 200,
+          },
           ["dapui_watches"] = { "dap", score_offset = 200 },
           ["dapui_hover"] = { "dap", score_offset = 200 },
           sql = { "snippets", "dadbod", "buffer" },
@@ -35,8 +38,15 @@ return {
           dap = {
             name = "dap",
             module = "blink.compat.source",
+            max_items = 20,
+
             enabled = function()
               return require("cmp_dap").is_dap_buffer()
+            end,
+            transform_items = function(_, items)
+              return vim.tbl_filter(function(item)
+                return item.kind ~= require("blink.cmp.types").CompletionItemKind.Module
+              end, items)
             end,
           },
         },

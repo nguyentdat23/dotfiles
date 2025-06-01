@@ -37,7 +37,32 @@ return {
               local node = state.tree:get_node()
               local path = node:get_id()
 
-              require("fzf-lua").live_grep({ cwd = path })
+              require("snacks").picker("grep", {
+                cwd = path,
+              })
+            end,
+            desc = "live_grep in current dir",
+          },
+          ["F"] = {
+            function(state)
+              local node = state.tree:get_node()
+              local path = node:get_id()
+
+              require("snacks").files("files", {
+                cwd = path,
+              })
+            end,
+            desc = "live_grep in current dir",
+          },
+
+          ["/"] = {
+            function(state)
+              require("snacks").picker("files", {
+                layout = {
+                  hidden = { "preview" },
+                  width = 0.5,
+                },
+              })
             end,
             desc = "live_grep in current dir",
           },
