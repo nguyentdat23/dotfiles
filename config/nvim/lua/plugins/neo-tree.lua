@@ -16,11 +16,11 @@ return {
         container = {
           enable_character_fade = true,
         },
-        icon = {
-          folder_closed = "",
-          folder_open = "󰝰",
-          folder_empty = "󰜌",
-        },
+        -- icon = {
+        --   folder_closed = "",
+        --   folder_open = "󰝰",
+        --   folder_empty = "󰜌",
+        -- },
         name = {
           use_git_status_colors = false,
         },

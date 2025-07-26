@@ -61,10 +61,10 @@ return {
         end,
 
         jdtls_config_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/config/" .. project_name
+          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
         end,
         jdtls_workspace_dir = function(project_name)
-          return vim.fn.stdpath("cache") .. "/jdtls/workspace/" .. project_name
+          return vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
         end,
         cmd = cmd,
         full_cmd = function(opts)
@@ -112,6 +112,10 @@ return {
             edit = {
               validateAllOpenBuffersOnChanges = false,
             },
+            format = {
+              enabled = true,
+              settings = {},
+            },
           },
         },
       }
@@ -150,6 +154,9 @@ return {
           resolveAdditionalTextEditsSupport = true,
           progressReportProvider = false,
         })
+
+        -- Construct the full path to your style file
+        -- This assumes 'google-styles.xml' is in the root of your config folder (e.g., ~/.config/nvim/google-styles.xml)
 
         local config = extend_or_override({
           cmd = opts.full_cmd(opts),
