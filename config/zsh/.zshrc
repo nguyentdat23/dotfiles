@@ -10,13 +10,9 @@ fi
 
 # Extend PATH.
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
-export NVM_DIR="$HOME/.nvm"
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
-  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
 typeset -U path
 path=(
-  $NVM_DIR
   /usr/local/{bin,sbin}
   $HOME/dotfiles/bin
   /opt/homebrew/bin
@@ -28,7 +24,6 @@ path=(
   $PNPM_HOME
   $path
 )
-
 # Options
 
 # Emacs mode in ZLE
@@ -117,11 +112,13 @@ compdef _directories take
 
 # environent variables
 export spring_profiles_active=local,dev
-export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/dat.nt31/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
+
 # End of Docker CLI completions
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
