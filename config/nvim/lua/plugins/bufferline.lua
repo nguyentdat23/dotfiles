@@ -5,12 +5,16 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
       options = {
-        separator_style = "thick", -- Options: "slant", "thick", "thin", or custom
+        separator_style = "cus", -- Options: "slant", "thick", "thin", or custom
+        indicator = {
+          style = "underline",
+        },
       },
       highlights = {
         -- Customize highlight groups to enhance the rounded appearance
         buffer_selected = {
-          gui = "bold",
+          bold = true,
+          italic = true,
           -- Add other styling as needed
         },
         -- Define other highlight groups as needed
