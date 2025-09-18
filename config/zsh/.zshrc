@@ -20,12 +20,14 @@ path=(
   /usr/local/{bin,sbin}
   $HOME/dotfiles/bin
   /opt/homebrew/bin
+  /opt/homebrew/opt/openjdk@21/bin
   $ANDROID_SDK_ROOT/emulator
   $ANDROID_SDK_ROOT/tools
   $ANDROID_SDK_ROOT/tools/bin
   $ANDROID_SDK_ROOT/platform-tools
   $XDG_DATA_HOME/nvim/mason/bin
   $PNPM_HOME
+  /opt/homebrew/bin/pip3
   $path
 )
 
@@ -106,14 +108,13 @@ source $ZDOTDIR/.packages/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZDOTDIR/.packages/fzf-tab/fzf-tab.plugin.zsh
 source $ZDOTDIR/.packages/zsh-manydots-magic/manydots-magic
 source $ZDOTDIR/.packages/powerlevel10k/powerlevel10k.zsh-theme
-# Extra functions
 
+# Extra functions
 function take() { [[ $# == 1 ]] && mkdir -p -- "$1" && cd -- "$1" }
 compdef _directories take
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
-
 
 # environent variables
 export spring_profiles_active=local,dev

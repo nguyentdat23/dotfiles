@@ -187,6 +187,13 @@ return {
         })
       end
 
+      vim.api.nvim_create_autocmd("BufWritePost", {
+        callback = function()
+          vim.lsp.codelens.refresh()
+        end,
+        group = vim.api.nvim_create_augroup("LspCodelensRefresh", { clear = true }),
+      })
+
       vim.api.nvim_create_autocmd("FileType", {
         pattern = java_filetypes,
         callback = attach_jdtls,

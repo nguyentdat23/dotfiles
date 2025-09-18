@@ -3,8 +3,14 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        sql = { "sqlfluff" },
-        pgsql = { "sqlfluff" },
+        sql = { "sql-formatter" },
+        pgsql = { "sql-formatter" },
+        xml = {
+          "xmlformatter",
+        },
+        java = {
+          "google-java-format",
+        },
       },
       formatters = {
         sqlfluff = {
