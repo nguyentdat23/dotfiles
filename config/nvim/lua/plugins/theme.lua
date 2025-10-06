@@ -5,9 +5,14 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = function()
+      ---@type CatppuccinOptions
+      ---
+      local bufferline = require("catppuccin.groups.integrations.bufferline")
+      bufferline.get = bufferline.get or bufferline.get_theme
+
       return {
         integrations = { blink_cmp = true },
-        transparent_background = true,
+        background_transparent = true,
         highlight_overrides = {
           all = function(colors)
             return {
@@ -149,31 +154,31 @@ return {
           },
           mocha = {
             rosewater = "#52ab8f",
-            flamingo = "#d5815e",
-            pink = "#de859c",
-            mauve = "#8abb69",
-            red = "#df6b64",
-            maroon = "#58b0a2",
-            peach = "#da8387",
-            yellow = "#e9a25d",
-            green = "#48b574",
-            teal = "#5fad95",
-            sky = "#5fa49f",
+            flamingo = "#cd7956",
+            pink = "#d78c92",
+            mauve = "#94bd59",
+            red = "#e47169",
+            maroon = "#8ccabc",
+            peach = "#d28698",
+            yellow = "#e99956",
+            green = "#70ba76",
+            teal = "#5ead95",
+            sky = "#589a91",
             sapphire = "#75b35e",
-            blue = "#da9e5a",
+            blue = "#e8b14b",
             lavender = "#a2a453",
-            text = "#cab18a",
+            text = "#d0bc95",
             subtext1 = "#aba38b",
-            subtext0 = "#9f997f",
-            overlay2 = "#9b947f",
+            subtext0 = "#a19979",
+            overlay2 = "#9c947e",
             overlay1 = "#837d6d",
-            overlay0 = "#6c695e",
-            surface2 = "#5c5b52",
-            surface1 = "#4d4c4a",
-            surface0 = "#3d3b3a",
-            base = "#252525",
-            mantle = "#262626",
-            crust = "#363530",
+            overlay0 = "#68665c",
+            surface2 = "#47463f",
+            surface1 = "#504f4d",
+            surface0 = "#353432",
+            base = "#202020",
+            mantle = "#1e1e1e",
+            crust = "#3a3933",
           },
         },
       }

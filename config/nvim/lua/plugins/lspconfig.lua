@@ -19,9 +19,6 @@ return {
           prefix = "icons",
         },
       },
-      inlay_hints = {
-        enabled = false,
-      },
     },
   },
   {
