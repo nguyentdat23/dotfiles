@@ -75,13 +75,7 @@
             },
             "devices": [
                 {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "is_pointing_device": true,
-                        "product_id": 65278,
-                        "vendor_id": 3141
-                    },
-                    "ignore": false,
+                    "identifiers": { "is_keyboard": true },
                     "manipulate_caps_lock_led": false
                 },
                 {
@@ -92,10 +86,6 @@
                         "vendor_id": 1
                     },
                     "ignore": false
-                },
-                {
-                    "identifiers": { "is_keyboard": true },
-                    "manipulate_caps_lock_led": false
                 }
             ],
             "name": "QWERTY",

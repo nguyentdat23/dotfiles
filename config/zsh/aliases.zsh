@@ -71,3 +71,7 @@ alias rm-node-modules='rm -rf $(find . -type d -name "node_modules" | grep --inv
 
 # Delete all node_modules folders in the current directory, recursively
 alias clean-node-modules="find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
+
+# Java Version Management
+alias java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17); export PATH="$JAVA_HOME/bin:$PATH"'
+alias java21='export JAVA_HOME=$(/usr/libexec/java_home -v 21); export PATH="$JAVA_HOME/bin:$PATH"'
