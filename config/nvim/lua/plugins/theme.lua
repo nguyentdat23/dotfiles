@@ -6,9 +6,6 @@ return {
     priority = 1000,
     opts = function()
       ---@type CatppuccinOptions
-      ---
-      local bufferline = require("catppuccin.groups.integrations.bufferline")
-      bufferline.get = bufferline.get or bufferline.get_theme
 
       return {
         integrations = { blink_cmp = true },
