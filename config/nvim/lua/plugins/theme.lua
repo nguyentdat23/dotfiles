@@ -5,8 +5,6 @@ return {
     name = "catppuccin",
     priority = 1000,
     opts = function()
-      ---@type CatppuccinOptions
-
       return {
         integrations = { blink_cmp = true },
         transparent_background = true, -- Enable transparent background
