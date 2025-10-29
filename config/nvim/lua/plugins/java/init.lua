@@ -130,15 +130,7 @@ return {
         -- Can set this to false to disable main class scan, which is a performance killer for large project
         dap_main = {},
         test = true,
-        settings = {
-          java = {
-            inlayHints = {
-              parameterNames = {
-                enabled = "all",
-              },
-            },
-          },
-        },
+        settings = {},
       }
     end,
     config = function(_, opts)
@@ -190,13 +182,6 @@ return {
       vim.api.nvim_create_autocmd("FileType", {
         pattern = java_filetypes,
         callback = attach_jdtls,
-      })
-
-      vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter" }, {
-        pattern = { "*.java" },
-        callback = function()
-          local _, _ = pcall(vim.lsp.codelens.refresh)
-        end,
       })
 
       -- Setup keymap and dap after the lsp is fully attached.

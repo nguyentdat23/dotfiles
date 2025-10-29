@@ -18,7 +18,7 @@ return {
     ---@type blink.cmp.Config
     opts = {
       sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
+        default = { "lsp", "path", "snippets", "buffer", "ripgrep" },
         per_filetype = {
           codecompanion = { "codecompanion" },
           ["dap-repl"] = {
@@ -37,7 +37,8 @@ return {
           },
           ripgrep = {
             module = "blink-ripgrep",
-            name = "Ripgrep",
+            name = "ripgrep",
+            score_offset = -100,
             opts = {
               project_root_marker = { ".git", "package.json", ".root", "pom.xml" },
             },
@@ -50,6 +51,7 @@ return {
             enabled = function()
               return require("cmp_dap").is_dap_buffer()
             end,
+
             transform_items = function(_, items)
               return vim.tbl_filter(function(item)
                 return item.kind ~= require("blink.cmp.types").CompletionItemKind.Module

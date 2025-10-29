@@ -11,6 +11,9 @@ return {
         jdtls = function()
           return true
         end,
+        qmlls = function()
+          return true
+        end,
       },
       diagnostics = {
         underline = true,
