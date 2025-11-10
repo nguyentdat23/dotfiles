@@ -11,13 +11,10 @@ return {
         },
       },
       highlights = {
-        -- Customize highlight groups to enhance the rounded appearance
         buffer_selected = {
           bold = true,
           italic = true,
-          -- Add other styling as needed
         },
-        -- Define other highlight groups as needed
       },
     },
   },

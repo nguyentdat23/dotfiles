@@ -1,12 +1,10 @@
 return {
   {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
-      -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     lazy = false, -- neo-tree will lazily load itself
     ---@module "neo-tree"
@@ -16,11 +14,11 @@ return {
         container = {
           enable_character_fade = true,
         },
-        -- icon = {
-        --   folder_closed = "",
-        --   folder_open = "󰝰",
-        --   folder_empty = "󰜌",
-        -- },
+        icon = {
+          folder_closed = "",
+          folder_open = "󰝰",
+          folder_empty = "󰜌",
+        },
         name = {
           use_git_status_colors = false,
         },

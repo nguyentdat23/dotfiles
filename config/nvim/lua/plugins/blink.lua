@@ -11,7 +11,6 @@ return {
     dependencies = {
       "mikavilpas/blink-ripgrep.nvim",
       "rcarriga/cmp-dap",
-      "Kaiser-Yang/blink-cmp-avante",
     },
     opts_extend = { "sources.default" },
     ---@module 'blink.cmp'
@@ -20,21 +19,14 @@ return {
       sources = {
         default = { "lsp", "path", "snippets", "buffer", "ripgrep" },
         per_filetype = {
-          codecompanion = { "codecompanion" },
           ["dap-repl"] = {
             "dap",
             score_offset = 200,
           },
-          ["dapui_watches"] = { "dap", score_offset = 200 },
-          ["dapui_hover"] = { "dap", score_offset = 200 },
           sql = { "snippets", "dadbod", "buffer" },
         },
         providers = {
-          avante = {
-            module = "blink-cmp-avante",
-            name = "Avante",
-            opts = {},
-          },
+
           ripgrep = {
             module = "blink-ripgrep",
             name = "ripgrep",

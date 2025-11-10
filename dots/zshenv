@@ -15,13 +15,12 @@ export GPG_TTY=$TTY
 
 # Applications
 export BROWSER='open'
-export TERMINAL='kitty'
+export TERMINAL='ghostty'
 export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 export COLORTERM='true'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
 
 # Clean up ~
 

@@ -6,10 +6,6 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
-      bigfile = { enabled = true },
-      dashboard = { enabled = true },
-      explorer = { enabled = false },
-      gitbrowse = { enabled = true },
       indent = {
         indent = {
           priority = 1,
@@ -57,15 +53,6 @@ return {
           return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ""
         end,
       },
-      input = { enabled = true },
-      picker = {
-        enabled = true,
-      },
-      quickfile = { enabled = true },
-      scope = { enabled = true },
-      scroll = { enabled = true },
-      statuscolumn = { enabled = true },
-      words = { enabled = true },
     },
   },
 }
