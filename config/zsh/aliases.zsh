@@ -3,7 +3,6 @@ alias sudo='sudo -E'  # Use current user configs
 alias grep='grep  --color=auto --exclude-dir={.git}'
 alias c='clear'
 alias tree='tree -a -I .git'
-alias ssh='kitty +kitten ssh'
 
 # Programs
 alias vim='nvim'

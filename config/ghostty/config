@@ -2,10 +2,7 @@ custom-shader = shaders/cursor_smear.glsl
 
 theme = dark:everforest-dark, light:everforest-light
 
-font-family = ZedMono NFM
-font-style-bold = Bold
-font-style-italic = Medium Italic
-font-style-bold-italic = Bold Italic
+font-family = ZedMono Nerd Font Mono
 font-feature = ss01 ss02 ss10 ss17
 
 font-size = 16
@@ -14,11 +11,11 @@ adjust-cell-height = 5
 
 macos-titlebar-style = tabs
 
-window-width = 145
-window-height = 40 
+window-width = 175
+window-height = 35 
 
-background-opacity = 1
-background-blur = 0
+background-opacity = 0.975
+background-blur = 10
 
 cursor-style = bar
 # cursor-color = cell-foreground
