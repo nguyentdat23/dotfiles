@@ -4,6 +4,7 @@
 
 # Extend PATH.
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 typeset -U path
 path=(

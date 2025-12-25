@@ -20,7 +20,7 @@ background-blur = 10
 cursor-style = bar
 # cursor-color = cell-foreground
 
-keybind = cmd+f=toggle_split_zoom
+keybind = ctrl+f=toggle_split_zoom
 
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+j=goto_split:bottom

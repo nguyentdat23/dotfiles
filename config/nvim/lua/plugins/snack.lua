@@ -6,6 +6,68 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      picker = {
+
+        sources = {
+          files = {
+            layout = {
+              layout = {
+                box = "horizontal",
+                backdrop = false,
+                width = 0.65,
+                height = 0.75,
+                border = "none",
+                {
+                  box = "vertical",
+                  {
+                    win = "input",
+                    height = 1,
+                    border = true,
+                    title = "{title} {live} {flags}",
+                    title_pos = "center",
+                  },
+                  { win = "list", title = " Results ", title_pos = "center", border = true },
+                },
+              },
+            },
+          },
+          grep = {
+            layout = {
+              preset = "telescope",
+              layout = {
+                reverse = true,
+                layout = {
+                  box = "horizontal",
+                  backdrop = false,
+                  width = 0.8,
+                  height = 0.9,
+                  border = "none",
+                  {
+                    box = "vertical",
+                    width = 0.75,
+                    { win = "list", title = " Results ", title_pos = "center", border = true },
+                    {
+                      win = "input",
+                      height = 1,
+                      border = true,
+                      title = "{title} {live} {flags}",
+                      title_pos = "center",
+                    },
+                  },
+                  {
+                    win = "preview",
+                    title = "{preview:Preview}",
+                    width = 1,
+                    border = true,
+                    title_pos = "center",
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+
       indent = {
         indent = {
           priority = 1,
@@ -34,10 +96,7 @@ return {
           hl = "SnacksIndentScope", ---@type string|string[] hl group for scopes
         },
         chunk = {
-          -- when enabled, scopes will be rendered as chunks, except for the
-          -- top-level scope which will be rendered as a scope.
           enabled = true,
-          -- only show chunk scopes in the current window
           only_current = true,
           priority = 200,
           hl = "SnacksIndentChunk", ---@type string|string[] hl group for chunk scopes

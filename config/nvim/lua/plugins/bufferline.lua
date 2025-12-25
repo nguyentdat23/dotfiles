@@ -5,7 +5,7 @@ return {
     dependencies = "nvim-tree/nvim-web-devicons",
     opts = {
       options = {
-        separator_style = "cus", -- Options: "slant", "thick", "thin", or custom
+        separator_style = "cus",
         indicator = {
           style = "underline",
         },
