@@ -2,10 +2,9 @@ custom-shader = shaders/cursor_smear.glsl
 
 theme = dark:everforest-dark, light:everforest-light
 
-font-family = ZedMono Nerd Font Mono
-font-feature = ss01 ss02 ss10 ss17
-
-font-size = 16
+font-family = Iosevka Nerd Font Mono
+font-size = 18
+font-feature = ss18
 
 adjust-cell-height = 5
 
@@ -15,10 +14,10 @@ window-width = 175
 window-height = 35 
 
 background-opacity = 0.975
-background-blur = 10
+background-blur = 8
 
 cursor-style = bar
-# cursor-color = cell-foreground
+cursor-color = cell-foreground
 
 keybind = ctrl+f=toggle_split_zoom
 
