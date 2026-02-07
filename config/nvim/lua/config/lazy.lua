@@ -12,6 +12,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     os.exit(1)
   end
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
@@ -30,7 +31,6 @@ require("lazy").setup({
   }, -- automatically check for plugin updates
   performance = {
     rtp = {
-      -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         "tokyonight",

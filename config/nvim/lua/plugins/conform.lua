@@ -5,6 +5,7 @@ return {
       java = { "google-java-format" },
       xml = { "xmlformatter" },
       nginx = { "nginxfmt" },
+      sql = { "sqruff" },
     },
   },
 }

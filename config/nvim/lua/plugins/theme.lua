@@ -7,56 +7,6 @@ return {
     opts = function()
       return {
         transparent_background = false,
-        highlight_overrides = {
-          all = function(colors)
-            return {
-              NeoTreeDirectoryIcon = { fg = colors.subtext1 },
-              NeoTreeDirectoryName = { fg = colors.text },
-              NeoTreeFileNameOpened = { bg = colors.subtext0 },
-              NeoTreeGitModified = { fg = colors.sky },
-              LineNr = {
-                fg = colors.subtext1,
-              },
-              Type = {
-                fg = colors.mauve,
-                style = { "italic" },
-              },
-              ["@lsp.mod.typeArgument.java"] = {
-                fg = colors.rosewater,
-              },
-              ["@property"] = {
-                fg = colors.text,
-              },
-              ["@variable.java"] = {
-                fg = colors.text,
-              },
-              ["@variable.parameter"] = {
-                fg = colors.text,
-              },
-              ["@keyword.return"] = {
-                fg = colors.text,
-              },
-              ["@parameter"] = {
-                fg = colors.text,
-              },
-              ["@variable.member"] = {
-                fg = colors.text,
-              },
-              ["@lsp.typemod.namespace.importDeclaration.java"] = {
-                fg = colors.text,
-              },
-              NeoTreeCursorLine = {
-                fg = colors.blue,
-                style = {
-                  "bold",
-                  "italic",
-                },
-              },
-              NeoTreeIndentMarker = { fg = colors.surface1 },
-              CursorLine = { bg = colors.crust },
-            }
-          end,
-        },
         color_overrides = {
           macchiato = {
             rosewater = "#9dc3a6",
@@ -143,33 +93,87 @@ return {
             crust = "#414662",
           },
           mocha = {
-            rosewater = "#b18e3d",
-            flamingo = "#dd7878",
-            pink = "#7382ba",
-            mauve = "#5e7c38",
-            red = "#c15852",
-            maroon = "#ac5d69",
-            peach = "#4a947c",
-            yellow = "#e68015",
-            green = "#5e9953",
-            teal = "#1b888e",
-            sky = "#3a94c5",
-            sapphire = "#4590a0",
-            blue = "#ca8c35",
-            lavender = "#6a83e2",
-            text = "#627464",
-            subtext1 = "#5a6552",
-            subtext0 = "#71735f",
-            overlay2 = "#81826f",
-            overlay1 = "#8f9281",
-            overlay0 = "#a5a191",
-            surface2 = "#b4b1a2",
-            surface1 = "#c4c1b3",
-            surface0 = "#d3d0c4",
-            base = "#f6f3ee",
-            mantle = "#f5f2ec",
-            crust = "#e3e0d5",
+            rosewater = "#ec8069",
+            flamingo = "#ea6d70",
+            pink = "#e069bb",
+            mauve = "#dd685d",
+            red = "#cd4b53",
+            maroon = "#dc6db9",
+            peach = "#3aac9b",
+            yellow = "#e6a703",
+            green = "#34a77c",
+            teal = "#26a2ad",
+            sky = "#3b94c6",
+            sapphire = "#26a0b9",
+            blue = "#7aa44b",
+            lavender = "#3b94c6",
+            text = "#55636b",
+            subtext1 = "#57636b",
+            subtext0 = "#64737b",
+            overlay2 = "#829281",
+            overlay1 = "#949f91",
+            overlay0 = "#a6b0a0",
+            surface2 = "#a6b2a5",
+            surface1 = "#bac3b7",
+            surface0 = "#cfd6cb",
+            base = "#faf8ec",
+            mantle = "#f9f5e6",
+            crust = "#e4e0d6",
           },
+        },
+        highlight_overrides = {
+          all = function(colors)
+            return {
+              NeoTreeDirectoryIcon = { fg = colors.subtext1 },
+              NeoTreeDirectoryName = { fg = colors.text },
+              NeoTreeFileNameOpened = { bg = colors.subtext0 },
+              NeoTreeGitModified = { fg = colors.sky },
+              LineNr = {
+                fg = colors.subtext1,
+              },
+              Type = {
+                fg = colors.mauve,
+              },
+              Function = {
+                style = { "italic" },
+              },
+              ["@lsp.mod.typeArgument.java"] = {
+                fg = colors.rosewater,
+              },
+              ["@property"] = {
+                fg = colors.text,
+              },
+              ["@variable.java"] = {
+                fg = colors.text,
+              },
+              ["@variable.parameter"] = {
+                fg = colors.text,
+              },
+              ["@keyword.return"] = {
+                fg = colors.text,
+              },
+              ["@parameter"] = {
+                fg = colors.text,
+              },
+              ["@variable.member"] = {
+                fg = colors.text,
+              },
+              ["@lsp.typemod.namespace.importDeclaration.java"] = {
+                fg = colors.text,
+              },
+              ["@lsp.typemod.enum.importDeclaration.java"] = {
+                fg = colors.text,
+              },
+              NeoTreeCursorLine = {
+                fg = colors.blue,
+                style = {
+                  "italic",
+                },
+              },
+              NeoTreeIndentMarker = { fg = colors.surface1 },
+              CursorLine = { bg = colors.crust },
+            }
+          end,
         },
       }
     end,

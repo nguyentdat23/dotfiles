@@ -6,6 +6,12 @@ return {
     opts = {
       servers = {
         jdtls = {},
+        tsgo = {
+          enabled = false,
+        },
+        vtsls = {
+          enabled = true,
+        },
       },
       setup = {
         jdtls = function()

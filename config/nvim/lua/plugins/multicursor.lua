@@ -7,18 +7,23 @@ return {
 
     local set = vim.keymap.set
 
-    set({ "n", "x" }, "<up>", function()
-      mc.lineAddCursor(-1)
+    -- Add cursors above/below the main cursor.
+    vim.keymap.set({ "n", "v" }, "<M-Up>", function()
+      mc.addCursor("k")
     end)
-    set({ "n", "x" }, "<down>", function()
-      mc.lineAddCursor(1)
+    vim.keymap.set({ "n", "v" }, "<M-Down>", function()
+      mc.addCursor("j")
     end)
+
     set({ "n", "x" }, "<leader><up>", function()
       mc.lineSkipCursor(-1)
     end)
     set({ "n", "x" }, "<leader><down>", function()
       mc.lineSkipCursor(1)
     end)
+
+    -- Add and remove cursors with control + left click.
+    vim.keymap.set("n", "<c-leftmouse>", mc.handleMouse)
 
     set({ "n", "x" }, "<leader>n", function()
       mc.matchAddCursor(1)

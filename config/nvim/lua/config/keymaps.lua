@@ -1,26 +1,6 @@
 -- Multicursor
 local mc = require("multicursor-nvim")
 
--- Add cursors above/below the main cursor.
-vim.keymap.set({ "n", "v" }, "<M-Up>", function()
-  mc.addCursor("k")
-end)
-vim.keymap.set({ "n", "v" }, "<M-Down>", function()
-  mc.addCursor("j")
-end)
-
--- Add a cursor and jump to the next word under cursor.
-vim.keymap.set({ "n", "v" }, "<c-n>", function()
-  mc.addCursor("*")
-end)
-
--- Rotate the main cursor.
-vim.keymap.set({ "n", "v" }, "<left>", mc.nextCursor)
-vim.keymap.set({ "n", "v" }, "<right>", mc.prevCursor)
-
--- Delete the main cursor.
-vim.keymap.set({ "n", "v" }, "<leader>x", mc.deleteCursor)
-
 -- Add and remove cursors with control + left click.
 vim.keymap.set("n", "<c-leftmouse>", mc.handleMouse)
 
